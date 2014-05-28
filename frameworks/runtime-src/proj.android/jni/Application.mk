@@ -5,6 +5,7 @@ APP_DEBUG := $(strip $(NDK_DEBUG))
 ifeq ($(APP_DEBUG),1)
   APP_CPPFLAGS += -DCOCOS2D_DEBUG=1
   APP_OPTIM := debug
+  APP_ABI := armeabi x86
 else
   APP_CPPFLAGS += -DNDEBUG
   APP_OPTIM := release

@@ -1,5 +1,6 @@
 build/
-runtime/**/*.app
+runtime/**/*.app*
+runtime/**/*.apk
 publish
 
 # Ignore thumbnails created by windows

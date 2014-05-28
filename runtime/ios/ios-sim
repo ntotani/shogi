@@ -1,0 +1,4 @@
+#!/bin/bash
+DIR=$(dirname $0)
+
+/usr/local/bin/ios-sim $@ --retina --tall --stderr $DIR/log --stdout $DIR/log
