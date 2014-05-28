@@ -1,6 +1,7 @@
 build/
-runtime/**/*.app*
-runtime/**/*.apk
+runtime
+!runtime/rtres
+!runtime/ios/ios-sim
 publish
 
 # Ignore thumbnails created by windows
