@@ -13,7 +13,7 @@ frameworks/runtime-src/proj.android/libs/x86/
 bin/
 obj/
 gen/
-assets/
+frameworks/runtime-src/proj.android/assets/
 local.properties
 
 # Ignore python compiled files

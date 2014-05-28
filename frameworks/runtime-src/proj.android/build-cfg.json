@@ -14,7 +14,7 @@
             ]
         },
         {
-            "from": "../../../res",
+            "from": "../../../assets/res",
             "to": "res",
             "exclude": [
                 "*.gz"
