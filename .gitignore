@@ -20,6 +20,7 @@ local.properties
 # Ignore files build by xcode
 .DS_Store
 ._.*
+frameworks/runtime-src/proj.ios_mac/DerivedData
 frameworks/runtime-src/proj.ios_mac/*.xcodeproj/*
 !frameworks/runtime-src/proj.ios_mac/*.xcodeproj/project.pbxproj
 !frameworks/runtime-src/proj.ios_mac/*.xcodeproj/project.xcworkspace/contents.xcworkspacedata
