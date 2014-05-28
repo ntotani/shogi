@@ -1,0 +1,33 @@
+build/
+runtime
+publish
+
+# Ignore thumbnails created by windows
+Thumbs.db
+
+# Ignore files build by ndk and eclipse
+frameworks/runtime-src/proj.android/libs/armeabi/
+frameworks/runtime-src/proj.android/libs/x86/
+bin/
+obj/
+gen/
+assets/
+local.properties
+
+# Ignore python compiled files
+*.pyc
+
+# Ignore files build by xcode
+.DS_Store
+._.*
+frameworks/runtime-src/proj.ios_mac/*.xcodeproj/*
+!frameworks/runtime-src/proj.ios_mac/*.xcodeproj/project.pbxproj
+!frameworks/runtime-src/proj.ios_mac/*.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+!frameworks/runtime-src/proj.ios_mac/*.xcodeproj/xcshareddata
+
+# Ignore vim swaps
+*.swp
+*.swo
+
+.settings
+.classpath
