@@ -1,5 +1,5 @@
 build/
-runtime
+runtime/**/*.app
 publish
 
 # Ignore thumbnails created by windows
