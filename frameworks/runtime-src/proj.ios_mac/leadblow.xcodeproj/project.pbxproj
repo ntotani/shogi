@@ -52,6 +52,10 @@
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
 		9771DE6C1938A3E50046C175 /* libPluginProtocol.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9771DE651938A0310046C175 /* libPluginProtocol.a */; };
 		9771DE6E1938A4830046C175 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9771DE6D1938A4830046C175 /* MediaPlayer.framework */; };
+		9771DE771938BB2A0046C175 /* libPluginFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9771DE741938BAF90046C175 /* libPluginFlurry.a */; };
+		9771DE791938BC420046C175 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9771DE781938BC420046C175 /* SystemConfiguration.framework */; };
+		9771DE7B1938BC480046C175 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9771DE7A1938BC480046C175 /* Security.framework */; };
+		9771DE7D1938BC700046C175 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9771DE7C1938BC700046C175 /* AdSupport.framework */; };
 		C033B51C191B337200D06937 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C033B51A191B337200D06937 /* VisibleRect.cpp */; };
 		C033B51D191B337200D06937 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C033B51A191B337200D06937 /* VisibleRect.cpp */; };
 		C03781B918BF655400FE4F13 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C03781B718BF655400FE4F13 /* res */; };
@@ -227,6 +231,20 @@
 			remoteGlobalIDString = FA09A320168ADBC2008C1C7B;
 			remoteInfo = PluginProtocol;
 		};
+		9771DE731938BAF90046C175 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9771DE6F1938BAF90046C175 /* PluginFlurry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA09A372168AFD41008C1C7B;
+			remoteInfo = PluginFlurry;
+		};
+		9771DE751938BB1D0046C175 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9771DE6F1938BAF90046C175 /* PluginFlurry.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FA09A371168AFD41008C1C7B;
+			remoteInfo = PluginFlurry;
+		};
 		C03781B318BF654500FE4F13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */;
@@ -366,6 +384,11 @@
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9771DE601938A0310046C175 /* PluginProtocol.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PluginProtocol.xcodeproj; path = "../../cocos2d-x/plugin/protocols/proj.ios/PluginProtocol.xcodeproj"; sourceTree = "<group>"; };
 		9771DE6D1938A4830046C175 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		9771DE6F1938BAF90046C175 /* PluginFlurry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PluginFlurry.xcodeproj; path = "../../cocos2d-x/plugin/plugins/flurry/proj.ios/PluginFlurry.xcodeproj"; sourceTree = "<group>"; };
+		9771DE781938BC420046C175 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		9771DE7A1938BC480046C175 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		9771DE7C1938BC700046C175 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		9771DE7E1938C20C0046C175 /* Values.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Values.h; path = ../Classes/Values.h; sourceTree = "<group>"; };
 		C033B51A191B337200D06937 /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
 		C033B51B191B337200D06937 /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
 		C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../../cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
@@ -457,6 +480,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9771DE7D1938BC700046C175 /* AdSupport.framework in Frameworks */,
+				9771DE7B1938BC480046C175 /* Security.framework in Frameworks */,
+				9771DE791938BC420046C175 /* SystemConfiguration.framework in Frameworks */,
+				9771DE771938BB2A0046C175 /* libPluginFlurry.a in Frameworks */,
 				9771DE6E1938A4830046C175 /* MediaPlayer.framework in Frameworks */,
 				9771DE6C1938A3E50046C175 /* libPluginProtocol.a in Frameworks */,
 				C03781F618BF65B100FE4F13 /* libluabindings iOS.a in Frameworks */,
@@ -593,6 +620,7 @@
 			isa = PBXGroup;
 			children = (
 				9771DE601938A0310046C175 /* PluginProtocol.xcodeproj */,
+				9771DE6F1938BAF90046C175 /* PluginFlurry.xcodeproj */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
@@ -601,6 +629,14 @@
 			isa = PBXGroup;
 			children = (
 				9771DE651938A0310046C175 /* libPluginProtocol.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9771DE701938BAF90046C175 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9771DE741938BAF90046C175 /* libPluginFlurry.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -642,6 +678,9 @@
 		F293B3CB15EB7BE500256477 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9771DE7C1938BC700046C175 /* AdSupport.framework */,
+				9771DE7A1938BC480046C175 /* Security.framework */,
+				9771DE781938BC420046C175 /* SystemConfiguration.framework */,
 				9771DE6D1938A4830046C175 /* MediaPlayer.framework */,
 				15A8A4871834C90E00142BE0 /* libcurl.dylib */,
 				D6B061341803AC000077942B /* CoreMotion.framework */,
@@ -676,6 +715,7 @@
 				C0619CD61896894800872C26 /* Runtime_ios-mac.mm */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
+				9771DE7E1938C20C0046C175 /* Values.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -736,6 +776,7 @@
 				C0A2F0491897600E0072A7AB /* PBXTargetDependency */,
 				C0A2F04B1897600E0072A7AB /* PBXTargetDependency */,
 				9771DE671938A0760046C175 /* PBXTargetDependency */,
+				9771DE761938BB1D0046C175 /* PBXTargetDependency */,
 			);
 			name = "leadblow iOS";
 			productName = leadblow;
@@ -773,6 +814,10 @@
 				{
 					ProductGroup = C03781AF18BF654500FE4F13 /* Products */;
 					ProjectRef = C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */;
+				},
+				{
+					ProductGroup = 9771DE701938BAF90046C175 /* Products */;
+					ProjectRef = 9771DE6F1938BAF90046C175 /* PluginFlurry.xcodeproj */;
 				},
 				{
 					ProductGroup = 9771DE611938A0310046C175 /* Products */;
@@ -863,6 +908,13 @@
 			fileType = archive.ar;
 			path = libPluginProtocol.a;
 			remoteRef = 9771DE641938A0310046C175 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9771DE741938BAF90046C175 /* libPluginFlurry.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPluginFlurry.a;
+			remoteRef = 9771DE731938BAF90046C175 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C03781B418BF654500FE4F13 /* libluabindings Mac.a */ = {
@@ -1020,6 +1072,11 @@
 			isa = PBXTargetDependency;
 			name = PluginProtocol;
 			targetProxy = 9771DE661938A0760046C175 /* PBXContainerItemProxy */;
+		};
+		9771DE761938BB1D0046C175 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PluginFlurry;
+			targetProxy = 9771DE751938BB1D0046C175 /* PBXContainerItemProxy */;
 		};
 		C03781F418BF659D00FE4F13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

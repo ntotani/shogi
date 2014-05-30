@@ -4,11 +4,15 @@
 #include "cocos2d.h"
 #include "Runtime.h"
 #include "ConfigParser.h"
+#include "PluginManager.h"
+#include "ProtocolAnalytics.h"
+#include "Values.h"
 
 using namespace CocosDenshion;
 
 USING_NS_CC;
 using namespace std;
+using namespace plugin;
 
 AppDelegate::AppDelegate()
 {
@@ -21,7 +25,6 @@ AppDelegate::~AppDelegate()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
-    
 #if (COCOS2D_DEBUG>0)
     initRuntime();
 #endif
@@ -53,6 +56,25 @@ bool AppDelegate::applicationDidFinishLaunching()
     director->setAnimationInterval(1.0 / 60);
 
     FileUtils::getInstance()->addSearchPath("res");
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    auto flurryId = FLURRY_ID_IOS;
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    auto flurryId = FLURRY_ID_ANDROID;
+#endif
+    if (strlen(flurryId) > 0) {
+        auto flurry = dynamic_cast<ProtocolAnalytics*>(PluginManager::getInstance()->loadPlugin("AnalyticsFlurry"));
+        if (flurry) {
+#ifdef COCOS2D_DEBUG
+            flurry->setDebugMode(true);
+            flurry->setCaptureUncaughtException(false);
+#else
+            flurry->setDebugMode(false);
+            flurry->setCaptureUncaughtException(true);
+#endif
+            flurry->startSession(flurryId);
+        }
+    }
 
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
