@@ -32,6 +32,7 @@ import java.net.SocketException;
 import java.util.Enumeration;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
+import org.cocos2dx.plugin.PluginWrapper;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -91,6 +92,8 @@ public class AppActivity extends Cocos2dxActivity{
 			}
 		}
 		hostIPAdress = getHostIpAddress();
+		
+		PluginWrapper.init(this);
 	}
 	 private boolean isWifiConnected() {  
 	        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);  
