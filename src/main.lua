@@ -1,5 +1,6 @@
 require "Cocos2d"
 require "Cocos2dConstants"
+require "CCBReaderLoad"
 
 -- cclog
 cclog = function(...)
@@ -218,10 +219,22 @@ local function main()
     local effectPath = cc.FileUtils:getInstance():fullPathForFilename("effect1.wav")
     cc.SimpleAudioEngine:getInstance():preloadEffect(effectPath)
 
+    local function loadCCBLayer()
+        local  proxy = CCBProxy:create()
+        --[[
+        local  node  = CCBReaderLoad("ccbi/MainScene.ccbi", proxy, nil)
+        local  layer = tolua.cast(node,"CCLayer")
+        return layer
+        --]]
+        local reader = proxy:createCCBReader()
+        return reader:load("ccbi/MainScene.ccbi")
+    end
+
     -- run
     local sceneGame = cc.Scene:create()
-    sceneGame:addChild(createLayerFarm())
-    sceneGame:addChild(createLayerMenu())
+    --sceneGame:addChild(createLayerFarm())
+    --sceneGame:addChild(createLayerMenu())
+    sceneGame:addChild(loadCCBLayer())
 	
 	if cc.Director:getInstance():getRunningScene() then
 		cc.Director:getInstance():replaceScene(sceneGame)
