@@ -6,6 +6,7 @@
 #include "ConfigParser.h"
 #include "PluginManager.h"
 #include "ProtocolAnalytics.h"
+#include "ProtocolAds.h"
 #include "Values.h"
 
 using namespace CocosDenshion;
@@ -74,6 +75,24 @@ bool AppDelegate::applicationDidFinishLaunching()
 #endif
             flurry->startSession(flurryId);
         }
+    }
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    auto admobId = ADMOB_ID_IOS;
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    auto admobId = ADMOB_ID_ANDROID;
+#endif
+    auto admob = dynamic_cast<ProtocolAds*>(PluginManager::getInstance()->loadPlugin("AdsAdmob"));
+    if (admob) {
+#ifdef COCOS2D_DEBUG
+        admob->setDebugMode(true);
+#endif
+        TAdsDeveloperInfo devInfo;
+        devInfo["AdmobID"] = admobId;
+        admob->configDeveloperInfo(devInfo);
+        log("success admob");
+    } else {
+        log("fail admob");
     }
 
     auto engine = LuaEngine::getInstance();
