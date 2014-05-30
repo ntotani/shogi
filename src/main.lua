@@ -220,14 +220,14 @@ local function main()
     cc.SimpleAudioEngine:getInstance():preloadEffect(effectPath)
 
     local function loadCCBLayer()
-        local  proxy = CCBProxy:create()
-        --[[
-        local  node  = CCBReaderLoad("ccbi/MainScene.ccbi", proxy, nil)
-        local  layer = tolua.cast(node,"CCLayer")
+        ccb.MainScene = {}
+        ccb.MainScene.onMenu = function(parameters)
+            print(ccb.MainScene.mAnimationManager:getAutoPlaySequenceId())
+            ccb.MainScene.dog:stopAllActions()
+        end
+        local  node  = CCBReaderLoad("ccbi/MainScene.ccbi", CCBProxy:create(), nil)
+        local  layer = tolua.cast(node,"cc.Layer")
         return layer
-        --]]
-        local reader = proxy:createCCBReader()
-        return reader:load("ccbi/MainScene.ccbi")
     end
 
     -- run
