@@ -82,17 +82,18 @@ bool AppDelegate::applicationDidFinishLaunching()
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     auto admobId = ADMOB_ID_ANDROID;
 #endif
-    auto admob = dynamic_cast<ProtocolAds*>(PluginManager::getInstance()->loadPlugin("AdsAdmob"));
-    if (admob) {
+    if (strlen(admobId) > 0) {
+        auto admob = dynamic_cast<ProtocolAds*>(PluginManager::getInstance()->loadPlugin("AdsAdmob"));
+        if (admob) {
 #ifdef COCOS2D_DEBUG
-        admob->setDebugMode(true);
+            admob->setDebugMode(true);
+#else
+            admob->setDebugMode(false);
 #endif
-        TAdsDeveloperInfo devInfo;
-        devInfo["AdmobID"] = admobId;
-        admob->configDeveloperInfo(devInfo);
-        log("success admob");
-    } else {
-        log("fail admob");
+            TAdsDeveloperInfo devInfo;
+            devInfo["AdmobID"] = admobId;
+            admob->configDeveloperInfo(devInfo);
+        }
     }
 
     auto engine = LuaEngine::getInstance();
