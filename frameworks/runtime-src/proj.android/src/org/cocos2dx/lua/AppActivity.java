@@ -32,8 +32,10 @@ import java.net.SocketException;
 import java.util.Enumeration;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
+import org.cocos2dx.lib.Cocos2dxHelper;
 import org.cocos2dx.plugin.PluginWrapper;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -46,10 +48,15 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager.OnActivityResultListener;
 import android.provider.Settings;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.facebook.LoggingBehavior;
+import com.facebook.Session;
+import com.facebook.SessionState;
 
 // The name of .so is specified in AndroidMenifest.xml. NativityActivity will load it automatically for you.
 // You can use "System.loadLibrary()" to load other .so files.
@@ -94,6 +101,27 @@ public class AppActivity extends Cocos2dxActivity{
 		hostIPAdress = getHostIpAddress();
 		
 		PluginWrapper.init(this);
+		// init facebook
+		com.facebook.Settings.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
+		Session session = Session.getActiveSession();
+		if (session == null) {
+			if (savedInstanceState != null) {
+				session = Session.restoreSession(this, null, null, savedInstanceState);
+			}
+			if (session == null) {
+				session = new Session(this);
+			}
+			Session.setActiveSession(session);
+			if (session.getState().equals(SessionState.CREATED_TOKEN_LOADED)) {
+				session.openForRead(new Session.OpenRequest(this));
+			}
+		}
+		final Activity that = this;
+		Cocos2dxHelper.addOnActivityResultListener(new OnActivityResultListener() {
+			public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
+				return Session.getActiveSession().onActivityResult(that, requestCode, resultCode, data);
+			}
+		});
 	}
 	 private boolean isWifiConnected() {  
 	        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);  
@@ -127,5 +155,12 @@ public class AppActivity extends Cocos2dxActivity{
 	
 	private static native boolean nativeIsLandScape();
 	private static native boolean nativeIsDebug();
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		Session session = Session.getActiveSession();
+		Session.saveSession(session, outState);
+	}
 	
 }

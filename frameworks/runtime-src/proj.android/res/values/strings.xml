@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">leadblow</string>
+    <string name="app_id">7777</string>
+    <string name="title_activity_facebook">Facebook</string>
 </resources>
