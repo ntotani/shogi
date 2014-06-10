@@ -702,9 +702,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F293B3C715EB7BE500256477 /* leadblow */ = {
+		F293B3C715EB7BE500256477 /* leadblow_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "leadblow" */;
+			buildConfigurationList = F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "leadblow_iOS" */;
 			buildPhases = (
 				F293B3C415EB7BE500256477 /* Sources */,
 				F293B3C515EB7BE500256477 /* Frameworks */,
@@ -725,7 +725,7 @@
 				97EFFE8E193C63190035382A /* PBXTargetDependency */,
 				97EFFEA0193C8D010035382A /* PBXTargetDependency */,
 			);
-			name = leadblow;
+			name = leadblow_iOS;
 			productName = leadblow;
 			productReference = F293B3C815EB7BE500256477 /* leadblow.app */;
 			productType = "com.apple.product-type.application";
@@ -785,7 +785,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				F293B3C715EB7BE500256477 /* leadblow */,
+				F293B3C715EB7BE500256477 /* leadblow_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1154,7 +1154,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "leadblow" */ = {
+		F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "leadblow_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F293B6C515EB7BEA00256477 /* Debug */,
